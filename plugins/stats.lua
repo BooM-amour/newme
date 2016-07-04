@@ -94,7 +94,7 @@ local function run(msg, matches)
   if matches[1]:lower() == 'virus' then -- Put everything you like :)
     local about = _config.about_text
     local name = user_print_name(msg.from)
-    savelog(msg.to.id, name.." ["..msg.from.id.."] used /virus ")
+    savelog(msg.to.id, name.." ["..msg.from.id.."] used /teleseed ")
     return about
   end 
   if matches[1]:lower() == "statslist" then
@@ -142,7 +142,7 @@ return {
     "^[!/]([Ss]tatslist)$",
     "^[!/]([Ss]tats) (group) (%d+)",
     "^[!/]([Ss]tats) (virus)",-- Put everything you like :)
-		"^[!/]([Vv]virus)"-- Put everything you like :)
+		"^[!/]([Vv]irus)"-- Put everything you like :)
     }, 
   run = run
 }
