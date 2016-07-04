@@ -223,7 +223,53 @@ function show_group_settingsmod(msg, target)
 		if not data[tostring(target)]['settings']['lock_rtl'] then
 			data[tostring(target)]['settings']['lock_rtl'] = 'no'
 		end
-	end
+        end
+    	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_cmd'] then
+			data[tostring(target)]['settings']['lock_cmd'] = 'no'
+		end
+        end  
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_all'] then
+			data[tostring(target)]['settings']['lock_all'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_fosh'] then
+			data[tostring(target)]['settings']['lock_fosh'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_emoji'] then
+			data[tostring(target)]['settings']['lock_emoji'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_fwd'] then
+			data[tostring(target)]['settings']['lock_fwd'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_poker'] then
+			data[tostring(target)]['settings']['lock_poker'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_tags'] then
+			data[tostring(target)]['settings']['lock_tags'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_user'] then
+			data[tostring(target)]['settings']['lock_user'] = 'no'
+		end
+        end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_reply'] then
+			data[tostring(target)]['settings']['lock_reply'] = 'no'
+		end
+        end
+           
   local settings = data[tostring(target)]['settings']
   local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection.."\nLock links : "..settings.lock_link.."\nLock RTL: "..settings.lock_rtl.."\nLock sticker: "..settings.lock_sticker.."\nPublic: "..settings.public
   return text
@@ -611,6 +657,29 @@ local function disable_strict_rules(msg, data, target)
     return 'Settings will not be strictly enforced'
   end
 end
+ 
+local function lock_group_all(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_rtl_lock = data[tostring(target)]['settings']['lock_all']
+  if group_all_lock == 'yes' then
+    return 'all posting is already locked'
+  else
+    data[tostring(target)]['settings']['lock_all'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'all posting has been locked'
+  end
+
+  local group_contacts_lock = data[tostring(target)]['settings']['lock_all']
+  if group_all_lock == 'no' then
+    return 'All posting is already unlocked'
+  else
+    data[tostring(target)]['settings']['lock_all'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'All posting has been unlocked'
+  end
+
 
 local function set_rulesmod(msg, data, target)
   if not is_momod(msg) then
