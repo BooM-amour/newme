@@ -227,7 +227,7 @@ function create_config( )
     "admin",
     "plugins"
     },
-    sudo_users = {221176886,205852814,0,tonumber(our_id)},--Sudo users
+    sudo_users = {221176886,205852814,170327742,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[
@@ -238,6 +238,7 @@ function create_config( )
 @imanothing (Dev.foun.man.) AmouR
 @KING_VvIRusS_KING (Dev.foun.man.) AmouR
 @MR_vViruSs4 (SUDO-man.) MohamaD
+@samafa      (SUDO-man.) SaMaN   
 
 
 Special thanks to:
