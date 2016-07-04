@@ -233,12 +233,12 @@ function create_config( )
 	"msg_checks",
 	"plugins"
     },
-    sudo_users = {221176886,205852814,0,tonumber(our_id)},--Sudo users
+    sudo_users = {221176886,205852814,170327742,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[@imanothing (Dev.foun.man.) AmouR
 @KING_VvIRusS_KING (Dev.foun.man.) AmouR
-@MR_vViruSs4 (SUDO-man.) MohamaD
-
+@MR_vViruSs4       (SUDO-man.) MohamaD
+@samafa            (SUDO-man.) SamaN        
 
 Special thanks to:
 👾v▶️IR◀️us👾™
